@@ -6,6 +6,9 @@ import "./index.css";
 import Login from "./Route/Login/Login";
 import User from "./Route/UserComponents/User/User";
 import Admin from "./Route/AdminComponents/Admin/Admin";
+import Jurnal from "./Route/UserComponents/Jurnal/Jurnal";
+
+navigator.geolocation;
 
 const router = createBrowserRouter([
   {
@@ -23,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/jurnal",
+    element: <Jurnal />,
   },
 ]);
 

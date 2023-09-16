@@ -1,6 +1,6 @@
 function CreateJurnal() {
   return (
-    <div className="w-96 flex flex-col items-center justify-center">
+    <div className="w-96 flex flex-col items-center justify-center p-3">
       <h2 className="font-bold text-2xl mt-5 text-[#1e2835]">BUAT JURNAL</h2>
       <form action="" className="flex flex-col w-full">
         <p>GAMBAR</p>
