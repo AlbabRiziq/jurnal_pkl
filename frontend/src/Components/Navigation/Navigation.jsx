@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 import jurnalPic from "../../assets/img/jurnal.png";
 
 function Navigation() {
   return (
     <div className="btm-nav">
-      <button>
+      <Link to="/app">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -19,11 +20,11 @@ function Navigation() {
           />
         </svg>
         <span className="btm-nav-label">Home</span>
-      </button>
-      <button>
+      </Link>
+      <Link to="/jurnal">
         <img src={jurnalPic} alt="" className="h-[24px]" />
         <span className="btm-nav-label">Jurnal</span>
-      </button>
+      </Link>
       <button>
         <svg
           xmlns="http://www.w3.org/2000/svg"
