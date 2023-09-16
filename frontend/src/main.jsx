@@ -7,6 +7,7 @@ import Login from "./Route/Login/Login";
 import User from "./Route/UserComponents/User/User";
 import Admin from "./Route/AdminComponents/Admin/Admin";
 import Jurnal from "./Route/UserComponents/Jurnal/Jurnal";
+import ViewJurnal from "./Route/UserComponents/Jurnal/ViewJurnal/ViewJurnal";
 
 navigator.geolocation;
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/jurnal",
     element: <Jurnal />,
+  },
+  {
+    path: "/jurnal/:jurnalId",
+    element: <ViewJurnal />,
   },
 ]);
 
