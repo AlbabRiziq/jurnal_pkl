@@ -1,8 +1,7 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import dummyImg from "../../../assets/img/tes.jpg";
 
 function JurnalCard({ id, title, date, description, img }) {
-  let { jurnalId } = useParams();
   return (
     <>
       <div className="card w-52 bg-base-100 shadow-xl m-3">
@@ -14,7 +13,11 @@ function JurnalCard({ id, title, date, description, img }) {
 
           <p className="date text-xs">{date ? date : "12/12/2021"}</p>
           <div className="card-actions justify-center items-center">
-            <button className="btn text-xs ">LIHAT SELENGKAPNYA</button>
+            <Link to={`/jurnal/${id}`}>
+              <div className="btn text-xs cursor-pointer">
+                LIHAT SELENGKAPNYA
+              </div>
+            </Link>
           </div>
         </div>
       </div>
