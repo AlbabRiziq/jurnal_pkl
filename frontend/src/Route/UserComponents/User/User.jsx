@@ -3,6 +3,7 @@ import Navbar from "../../../Components/Navbar/Navbar";
 import Navigation from "../../../Components/Navigation/Navigation";
 import CreateJurnal from "../CreateJurnal/CreateJurnal";
 import Absen from "../Absen/Absen";
+import Jam from "../../../Components/Jam/Jam";
 
 const absen = false;
 
@@ -48,6 +49,7 @@ function User() {
   return (
     <div>
       <Navbar />
+      <Jam />
       {absen ? <CreateJurnal /> : <Absen />}
 
       <div className="w-screen flex justify-center"></div>
