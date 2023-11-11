@@ -7,6 +7,7 @@ import bcrypt from "bcrypt";
 mongoose.connect("mongodb://127.0.0.1:27017/jurnalpkl");
 
 const app = express();
+let router = express.Router();
 const PORT = process.env.PORT || 8080;
 
 app.get("/user", async (req, res) => {
@@ -19,12 +20,18 @@ app.post("/signup", async (req, res) => {
   const username = req.query.username;
   const password = req.query.password;
 
-  await User.create({
-    username: username,
-    password: password,
-  });
+  const hasil = await User.find({ username: username });
 
-  res.send("OK");
+  if (hasil.length > 0) {
+    res.json({ message: "Username sudah ada" });
+  } else {
+    const hasil = await User.create({
+      username: username,
+      password: password,
+    });
+
+    res.status(200).json({ username: hasil.username });
+  }
 });
 
 app.post("/login", async (req, res) => {
@@ -35,9 +42,9 @@ app.post("/login", async (req, res) => {
   const canLogin = await bcrypt.compare(password, dataUser.password);
 
   if (canLogin) {
-    res.send("OK");
+    res.json({ username: dataUser.username });
   } else {
-    res.send("NO");
+    res.status(400).send("NO");
   }
 });
 
