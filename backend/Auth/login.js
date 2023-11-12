@@ -3,9 +3,11 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import User from "../model/user.js";
 
+const router = express.Router();
+
 mongoose.connect("mongodb://127.0.0.1:27017/jurnalpkl");
 
-const Login = async (req, res) => {
+const login = async (req, res) => {
   const username = req.query.username;
   const password = req.query.password;
 
@@ -13,10 +15,10 @@ const Login = async (req, res) => {
   const canLogin = await bcrypt.compare(password, dataUser.password);
 
   if (canLogin) {
-    return "OK";
+    res.json({ username: dataUser.username });
   } else {
-    return "NO";
+    res.status(400).send("NO");
   }
 };
 
-export default Login;
+export default login;
