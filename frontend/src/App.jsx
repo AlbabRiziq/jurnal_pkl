@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
+import SelectRole from "./Route/SelectRole/SelectRole";
 
-const login = true;
+const login = false;
 const hak = "user";
+const dataExist = false;
 
 function App() {
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (login) {
-      if (hak === "admin") {
-        navigate("/admin");
-      } else {
-        navigate("/app");
-      }
-    } else {
-      navigate("/login");
-    }
-  }, []);
+  if (dataExist) {
+    null;
+  } else {
+    return <SelectRole />;
+  }
 }
 
 export default App;

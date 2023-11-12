@@ -22,7 +22,7 @@ function Login() {
         />
 
         <label className="label">
-          <span className="label-text">USERNAME</span>
+          <span className="label-text">PASSWORD</span>
         </label>
         <input
           type="text"
