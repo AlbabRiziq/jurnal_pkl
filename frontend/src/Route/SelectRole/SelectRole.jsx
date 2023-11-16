@@ -9,7 +9,7 @@ function SelectRole() {
 
   const changeData = (role) => {
     data.user = role;
-    navigate("/login");
+    navigate(`/login/${role}`);
   };
 
   return (

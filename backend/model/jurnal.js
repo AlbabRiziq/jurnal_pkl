@@ -12,3 +12,5 @@ const JurnalScheme = new mongoose.Schema({
 });
 
 const Jurnal = mongoose.model("Jurnal", JurnalScheme);
+
+export default Jurnal;

@@ -6,8 +6,9 @@ import mongoose from "mongoose";
 // ROUTE
 import login from "./Auth/login.js";
 import signup from "./Auth/signup.js";
+import adminsignup from "./Auth/adminsignup.js";
 
-mongoose.connect("mongodb://127.0.0.1:27017/jurnalpkl");
+mongoose.connect(process.env.MONGO_URI);
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -18,6 +19,7 @@ app.use("/", router);
 // DEKLARASI ROUTE
 router.post("/login", login);
 router.post("/signup", signup);
+router.post("/adminsignup", adminsignup);
 
 app.listen(PORT, () => {
   console.log(`Started on port ${PORT}`);
