@@ -12,6 +12,7 @@ const UserScheme = new mongoose.Schema({
   tempat_pkl: String,
   token_pkl: String,
   journal_id: String,
+  no_hp: String,
 });
 
 UserScheme.pre("save", async function (next) {
